@@ -1,0 +1,12 @@
+{
+  "name":"fabric",
+  "scale":5,
+  "props":{
+    "environmentIntensity":0.5,
+    "specularIntensity":0.3,
+    "albedoTexture":"diffuse.jpg",
+    "albedoColor":[1,1,1],
+    "bumpTexture":"normal.jpg",
+    "reflectivityColor":[0.01,0.01,0.01]
+  }
+}

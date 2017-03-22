@@ -1,0 +1,13 @@
+{
+  "name":"chair",
+  "props":{
+    "specularIntensity":0.1,
+
+    "albedoTexture":"diffuse.jpg",
+    "albedoColor":[1,1,1],
+    "reflectivityTexture":"metal.png",
+    "bumpTexture":"normal.jpg",
+    "lightmapTexture":"ao.jpg",
+    "useLightmapAsShadowmap":1
+  }
+}

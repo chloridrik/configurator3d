@@ -1,0 +1,12 @@
+{
+  "name":"wood0",
+  "scale":5,
+  "props":{
+    "environmentIntensity":0.5,
+    "specularIntensity":0.3,
+    "albedoTexture":"diffuse.jpg",
+    "albedoColor":[1,1,1],
+    "reflectivityTexture":"metal.png",
+    "bumpTexture":"normal.jpg"
+  }
+}

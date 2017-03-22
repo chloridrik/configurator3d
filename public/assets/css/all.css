@@ -1,0 +1,133 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+sup {
+  font-size: .5em;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.home .renderCanvas {
+  width: 100%;
+  height: 100%;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+.home .nav {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  color: #FFFFFF;
+  font-family: Arial;
+  text-transform: uppercase;
+}
+
+.home .nav .nav-group {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 5px;
+}
+
+@media (max-width: 1023px) {
+  .home .nav .nav-group {
+    font-size: 9px;
+    padding: 3px;
+  }
+}
+
+.home .nav .btn {
+  padding: 4px;
+  background-color: #CC0000;
+  margin: 3px;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .home .nav .btn {
+    padding: 2px;
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=app.css.map */
+
+/*# sourceMappingURL=all.css.map */

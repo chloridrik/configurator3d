@@ -1,0 +1,10 @@
+{
+  "name":"tv0",
+  "props":{
+    "environmentIntensity":0.5,
+    "specularIntensity":0.3,
+    "albedoColor":[0.9,0.9,0.9],
+
+    "reflectivityColor":[0.1,0.1,0.1]
+  }
+}
