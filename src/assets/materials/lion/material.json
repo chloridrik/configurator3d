@@ -1,0 +1,11 @@
+{
+  "name":"lion",
+  "props":{
+    "specularIntensity":0.1,
+
+    "albedoTexture":"diffuse.jpg",
+    "albedoColor":[1,1,1],
+    "reflectivityColor":[0.05,0.05,0.05],
+    "bumpTexture":"normal.jpg"
+  }
+}

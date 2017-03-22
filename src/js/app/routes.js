@@ -11,7 +11,10 @@
  *
  * @type {object} The routes
  */
-export default [
+export default [{
+        path: '/',
+        component: require('./views/Home/Home.vue')
+    },
 
     //
     // Important : If you modify any routes in <routes></routes>, place it out of the tags.

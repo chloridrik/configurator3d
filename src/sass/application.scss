@@ -16,6 +16,8 @@
 // Views
 //
 
+@import "../js/app/views/Home/Home";
+
 //[views]
 //[/views]
 
@@ -25,3 +27,15 @@
 
 //[components]
 //[/components]
+
+html, body {
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+}
+
+#app{
+  width:100%;
+  height:100%;
+}

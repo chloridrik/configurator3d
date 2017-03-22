@@ -1,0 +1,34 @@
+.home {
+  width:100%;
+  height:100%;
+  background-color: red;
+
+  .renderCanvas{
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+  }
+
+  .nav{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index: 3;
+    color:#FFFFFF;
+    font-family: Arial;
+    text-transform: uppercase;
+
+    .nav-group{
+      padding: 10px;
+      background-color: rgba(0,0,0,0.6);
+      margin-bottom: 5px;
+
+    }
+    .btn{
+      padding: 4px;
+      background-color: #CC0000;
+      margin: 3px;
+      cursor: pointer;
+    }
+  }
+}
