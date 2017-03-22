@@ -1,15 +1,12 @@
 {
-  "name":"wood1",
+  "name":"fabric",
   "scale":5,
   "props":{
     "environmentIntensity":0.5,
     "specularIntensity":0.3,
     "albedoTexture":"diffuse.jpg",
     "albedoColor":[1,1,1],
-    "reflectivityTexture":"metal.png",
     "bumpTexture":"normal.jpg",
-    "lightmapTexture":"ao.jpg",
-    "useLightmapAsShadowmap":1,
-    "roughness":20
+    "reflectivityColor":[0.01,0.01,0.01]
   }
 }

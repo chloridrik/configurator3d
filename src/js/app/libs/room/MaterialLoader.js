@@ -3,15 +3,18 @@ import Axios from 'axios';
 
 export default {
 
-    load(path,scene,skyWrapper)
+    load(path,scene,reflectionTexture,defaultValues)
     {
-        console.log("load material ",path);
         var material = new BABYLON.PBRMaterial(path, scene);
-        //skyWrapper.addMaterial(material,"reflectivityTexture");
-        material.reflectionTexture = skyWrapper;
+        material.reflectionTexture = reflectionTexture;
+        if(defaultValues == null) defaultValues = {};
+        for(var i in defaultValues)
+        {
+            material[i] = defaultValues[i];
+        }
         Axios.get(path+"/material.json")
             .then(response=>{
-                console.log("json loaded",response.data);
+               var scale = response.data.scale || 1;
                 var props = response.data.props;
                 for(var i in props)
                 {
@@ -21,6 +24,7 @@ export default {
                     {
                         case "texture":
                             material[i] = new BABYLON.Texture(path+"/"+value,  scene,false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE);
+                            material[i].uScale = material[i].vScale = scale;
                             break;
                         case "color":
                             if(value.length == 4) material[i] = new BABYLON.Color4(value[0], value[1], value[2],value[3]);

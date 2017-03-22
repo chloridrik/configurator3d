@@ -23,12 +23,21 @@
       background-color: rgba(0,0,0,0.6);
       margin-bottom: 5px;
 
+      @include  small-device{
+        font-size: 9px;
+        padding: 3px;
+      }
+
     }
     .btn{
       padding: 4px;
       background-color: #CC0000;
       margin: 3px;
       cursor: pointer;
+
+      @include small-device{
+        padding: 2px;
+      }
     }
   }
 }

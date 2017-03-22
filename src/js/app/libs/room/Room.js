@@ -30,7 +30,7 @@ export class Room {
        // this.hdrTexture = new TextureWrapper(new BABYLON.HDRCubeTexture("/assets/textures/skybox/room0.hdr", this.scene, 128));
      var skyTexture  =  new BABYLON.Texture("/assets/textures/skybox/room0.jpg", this.scene);
         skyTexture.coordinatesMode = BABYLON.Texture.FIXED_EQUIRECTANGULAR_MODE;
-        this.hdrTexture = new BABYLON.HDRCubeTexture("/assets/textures/skybox/room0.hdr", this.scene,256);
+        this.hdrTexture = new BABYLON.HDRCubeTexture("/assets/textures/skybox/room0.hdr", this.scene,256,false,true);
 
         this.hdrSkyboxMaterial = new BABYLON.StandardMaterial("skyBox", this.scene);
         this.hdrSkyboxMaterial.reflectionTexture = skyTexture;
@@ -43,16 +43,27 @@ export class Room {
         this.hdrSkybox.infiniteDistance = true;
 
         BABYLON.SceneLoader.ImportMesh("chair", "./assets/", "demo.babylon", this.scene, (newMeshes, particleSystems) =>{
-            console.log("mesh loaded");
-            newMeshes[0].material =  MaterialLoader.load("/assets/materials/chair",this.scene, this.hdrTexture);
+            this.defaultChairMaterial = {
+                bumpTexture:new BABYLON.Texture("./assets/materials/chair/normal.jpg",  this.scene,false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE),
+                lightmapTexture:new BABYLON.Texture("./assets/materials/chair/ao.jpg",  this.scene,false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE),
+                useLightmapAsShadowmap:true
+            };
+
+            newMeshes[0].material =  MaterialLoader.load("/assets/materials/wood1",this.scene, this.hdrTexture,this.defaultChairMaterial);
+            this.chair = newMeshes[0];
         });
 
         BABYLON.SceneLoader.ImportMesh("lion", "./assets/", "demo.babylon", this.scene, (newMeshes, particleSystems)=> {
-            newMeshes[0].material = MaterialLoader.load("/assets/materials/lion",this.scene, this.hdrTexture);
+            this.defaultLionMaterial = {
+                bumpTexture:new BABYLON.Texture("./assets/materials/lion/normal.jpg",  this.scene,false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE)
+            };
+            newMeshes[0].material = MaterialLoader.load("/assets/materials/lion",this.scene, this.hdrTexture,this.defaultLionMaterial);
+            this.lion = newMeshes[0];
         });
 
         BABYLON.SceneLoader.ImportMesh("tv", "./assets/", "demo.babylon", this.scene, (newMeshes, particleSystems)=> {
             newMeshes[0].material = MaterialLoader.load("/assets/materials/tv0",this.scene, this.hdrTexture);
+            this.tv = newMeshes[0];
         });
 
 /*
@@ -85,16 +96,30 @@ export class Room {
 
     }
 
+    updateLion(path)
+    {
+        this.lion.material = MaterialLoader.load(path,this.scene, this.hdrTexture,this.defaultLionMaterial);
+    }
+
+    updateChair(path)
+    {
+        this.chair.material = MaterialLoader.load(path,this.scene, this.hdrTexture,this.defaultChairMaterial);
+    }
 
     updateGround(path)
     {
         this.ground.material = MaterialLoader.load(path,this.scene, this.hdrTexture);
     }
 
+    updateTV(path)
+    {
+        this.tv.material = MaterialLoader.load(path,this.scene, this.hdrTexture);
+    }
+
     updateSkybox(path)
     {
 
-        var hdrTexture = new BABYLON.HDRCubeTexture(path+".hdr", this.scene, 128);
+        var hdrTexture = new BABYLON.HDRCubeTexture(path+".hdr", this.scene, 128,false,true);
         var skyTexture = new BABYLON.Texture(path+".jpg", this.scene);
         skyTexture.coordinatesMode = BABYLON.Texture.FIXED_EQUIRECTANGULAR_MODE;
 

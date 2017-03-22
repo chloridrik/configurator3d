@@ -36,10 +36,24 @@ export default {
             this.room.updateSkybox("/assets/textures/skybox/room"+index)
         },
 
-        setGround(index)
+        setGround(materialName)
         {
-            var grounds = ["/assets/materials/wood0","/assets/materials/wood1"]
-            this.room.updateGround(grounds[index]);
+            this.room.updateGround("/assets/materials/"+materialName);
+        },
+
+        setTV(materialName)
+        {
+            this.room.updateTV("/assets/materials/"+materialName);
+        },
+
+        setLion(materialName)
+        {
+            this.room.updateLion("/assets/materials/"+materialName);
+        },
+
+        setChair(materialName)
+        {
+            this.room.updateChair("/assets/materials/"+materialName);
         }
 
     }
