@@ -1,4 +1,5 @@
 import BABYLON from 'babylonjs';
+import handjs from 'handjs';
 import {TextureWrapper} from './wrapper/TextureWrapper';
 import MaterialLoader from './MaterialLoader';
 export class Room {
@@ -7,20 +8,17 @@ export class Room {
     {
         this.canvas = canvas;
         this.engine = new BABYLON.Engine(this.canvas, true);
-
         this.scene = new BABYLON.Scene(this.engine);
 
-        this.camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, BABYLON.Vector3.Zero(), this.scene);
-        this.camera.setPosition(new BABYLON.Vector3(-2, 2, 0));
-        this.camera.attachControl(this.canvas, true);
 
-       // this.light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0, 1, 0), this.scene);
+       this.camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, BABYLON.Vector3.Zero(), this.scene);
+         this.camera.setPosition(new BABYLON.Vector3(-2, 2, 0));
+       // console.log("camera class ",BABYLON.FreeCameraTouchInput);
+        //this.camera = new BABYLON.VirtualJoysticksCamera("Camera", new BABYLON.Vector3(-2, 5, 0), this.scene);
+        this.camera.attachControl(this.canvas,false);
 
-
-        console.log("babylon mounted",this.scene);
 
         this.initEnv();
-
         this.engine.runRenderLoop(this.render.bind(this));
 
     }
@@ -66,34 +64,9 @@ export class Room {
             this.tv = newMeshes[0];
         });
 
-/*
-        var groundmat = new BABYLON.PBRMaterial("groundmat", this.scene);
-        //groundmat.reflectionTexture = hdrTexture;
-        this.hdrTexture.addMaterial(groundmat,"reflectionTexture");
-        groundmat.environmentIntensity = 0.5;
-        groundmat.specularIntensity = 0.3;
 
-        groundmat.albedoTexture = new BABYLON.Texture("./assets/floor/floor1/diffuse.jpg", scene);
-        groundmat.albedoTexture.uScale = groundmat.albedoTexture.vScale = 2;
-        groundmat.albedoColor = BABYLON.Color3.White();
-
-        groundmat.reflectivityTexture = new BABYLON.Texture("./assets/floor/floor1/metal.png", scene);
-        groundmat.reflectivityTexture.uScale = groundmat.reflectivityTexture.vScale = 2;
-        groundmat.useMicroSurfaceFromReflectivityMapAlpha = false;
-
-        groundmat.bumpTexture = new BABYLON.Texture("./assets/floor/floor1/normal.jpg", scene);
-        groundmat.bumpTexture.uScale = groundmat.bumpTexture.vScale = 2;
-        */
-        //groundmat.lightmapTexture = new BABYLON.Texture("./assets/chest/occlusion.jpg", scene);
-        //groundmat.useLightmapAsShadowmap = true;
-
-        // create a built-in "ground" shape; its constructor takes the same 5 params as the sphere's one
         this.ground = BABYLON.Mesh.CreateGround('ground1', 10, 10, 2, this.scene);
         this.ground.material = MaterialLoader.load("/assets/materials/wood0",this.scene, this.hdrTexture);
-        //this.hdrTexture.addMaterial(ground.material,"reflectionTexture");
-        //ground.material = groundmat;
-
-
     }
 
     updateLion(path)

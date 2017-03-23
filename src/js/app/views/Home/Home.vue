@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <canvas class="renderCanvas"></canvas>
+        <canvas class="renderCanvas" touch-action="none"></canvas>
         <div class="nav">
             <div class="nav-group">
                 <span class="title">Skybox</span>
