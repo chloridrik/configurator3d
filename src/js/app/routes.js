@@ -16,6 +16,11 @@ export default [{
         component: require('./views/Home/Home.vue')
     },
 
+    {
+        path: '/editor',
+        component: require('./views/Editor/Editor.vue')
+    },
+
     //
     // Important : If you modify any routes in <routes></routes>, place it out of the tags.
     //

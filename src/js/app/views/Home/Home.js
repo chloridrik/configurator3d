@@ -33,7 +33,7 @@ export default {
 
         setSky(index)
         {
-            this.room.updateSkybox("/assets/textures/skybox/room"+index)
+            this.room.updateSkybox("/assets/sky/"+index)
         },
 
         setGround(materialName)

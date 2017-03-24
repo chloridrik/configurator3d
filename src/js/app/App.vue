@@ -8,6 +8,7 @@
 
     import Vue from 'vue';
     import locale from './mixins/locale';
+    import handjs from 'handjs';
 
     Vue.mixin(locale);
 

@@ -1,0 +1,14 @@
+{
+  "name":"tiles",
+  "scale":8,
+  "props":{
+    "specularIntensity":0.1,
+
+    "albedoTexture":"diffuse.jpg",
+    "albedoColor":[1,1,1],
+    "reflectivityTexture":"metal.jpg",
+    "bumpTexture":"normal.jpg",
+    "lightmapTexture":"ao.jpg",
+    "useLightmapAsShadowmap":1
+  }
+}

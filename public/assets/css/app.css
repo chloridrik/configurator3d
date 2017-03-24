@@ -116,6 +116,19 @@ body {
   }
 }
 
+.editor {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.editor .renderCanvas {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  -ms-touch-action: none;
+}
+
 html, body {
   width: 100%;
   height: 100%;
